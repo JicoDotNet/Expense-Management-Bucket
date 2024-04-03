@@ -1,0 +1,48 @@
+﻿@model ExpenditureManagement.Models.ExpensesModels
+@{ 
+    double amt = 0;
+}
+<table id="example" class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Details</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Transaction<br />Expenses Type</th>
+            <th scope="col">Note</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Expensess.Count() > 0)
+        {
+            foreach (var item in Model.Expensess)
+            {
+                <tr>
+                    <th scope="row">@item.TransactionDate.ToString("dd")</th>
+                    <td>@item.Details</td>
+                    <td>
+                        @item.Amount
+                        @{ amt += item.Amount; }
+                    </td>
+                    <td>
+                        @item.TransactionType
+                        <br />
+                        @item.ExpensesType
+                    </td>
+                    <td>@item.Note</td>
+                    <td>
+                        <a href="@Url.Action("Add", "Home", new { id = item.RowKey })" class="btn btn-primary">Edit</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td class="text-center" colspan="6">No data found</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div> Total Amount: @amt</div>
