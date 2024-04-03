@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @if (TempData.ContainsKey("success"))
+    {
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["success"]
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {        
+        <div class="row justify-content-center">
+            <div class="col-12">                
+                <div class="row mt-3">
+                    <div class="col">
+                        <label>Username</label>
+                        <input type="text" step="1" required name="UserName"
+                               class="form-control" placeholder="Username" />
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <label>Password</label>
+                        <input type="password" step="1" required name="Password"
+                               class="form-control" placeholder="Password" />
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
