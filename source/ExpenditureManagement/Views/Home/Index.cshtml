@@ -25,7 +25,7 @@
                     <select required class="form-control" name="Month" onchange="SearchData();">
                         @for (int i = 1; i < 13; i++)
                         {
-                            DateTime dt = new DateTime(2023, i, 1);
+                            DateTime dt = new DateTime(2024, i, 1);
                             <option value="@i"
                                     @if (i == GenericLogic.IstNow.Month) { <text> selected </text> }>
                                 @dt.ToString("MMMM")
@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-6">
                     <select required class="form-control" name="Year">
-                        <option value="2023" selected>2023</option>
+                        <option value="2024" selected>2024</option>
                     </select>
                 </div>
             </div>
