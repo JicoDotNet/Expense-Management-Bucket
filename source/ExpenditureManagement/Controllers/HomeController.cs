@@ -13,7 +13,7 @@ namespace ExpenditureManagement.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public object StorageCon = WebConfigurationManager.AppSettings["StorageAccount"].ToString();
+        public object StorageCon = WebConfigurationManager.ConnectionStrings["StorageAccount"].ToString();
 
         public ActionResult Login(string returnUrl)
         {
@@ -23,19 +23,21 @@ namespace ExpenditureManagement.Controllers
         [HttpPost]
         public ActionResult Login(LoginCred login)
         {
-            ExecuteTableManager tableManager = new ExecuteTableManager("Login", StorageCon);
-            LoginCred Log = tableManager.RetrieveEntity<LoginCred>("PartitionKey eq '" + login.UserName + "' and IsActive eq true").FirstOrDefault();
-            if (Log != null && Log.Password == login.Password)
+            if (WebConfigAppSettingsAccess.UserEmail != login.UserName
+                    || WebConfigAppSettingsAccess.Password != login.Password)
+            {
+                TempData["success"] = "Either Email or Password is wrong!!";
+                return RedirectToAction("Login", "Home", new { id = string.Empty });
+            }
+            else
             {
                 Response.Cookies.Add(new HttpCookie("cred")
                 {
                     Value = login.UserName,
-                    Expires = DateTime.Now.AddMonths(1)
+                    Expires = DateTime.Now.AddMonths(11)
                 });
                 return RedirectToAction("Add", "Home", new { id = string.Empty });
-            }
-            TempData["success"] = "Invalid Password";
-            return RedirectToAction("Login", "Home", new { id = string.Empty });
+            }            
         }
         
         public ActionResult Logout()

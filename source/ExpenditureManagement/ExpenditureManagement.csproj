@@ -125,6 +125,7 @@
     <Compile Include="Logic\Extension.cs" />
     <Compile Include="Models\Expenses.cs" />
     <Compile Include="Models\ExpensesModels.cs" />
+    <Compile Include="Models\WebConfigAppSettingsAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
