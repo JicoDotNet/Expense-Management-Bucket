@@ -150,6 +150,7 @@
     <None Include="Properties\PublishProfiles\ExpensesManage - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ExpensesManage - Web Deploy.pubxml" />
     <Content Include="Views\Home\WahtsApp.cshtml" />
+    <Content Include="Views\Home\_PartialMenuBindPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,31 @@
+﻿@using ExpenditureManagement.Models
+@model LoginCredentials
+
+@if (Model != null && Model.UserEmail != null)
+{
+    <header class="border-bottom border-primary">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Expenses Manage <small class="text-primary">of @Model.UserFullName</small> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-success" href="@Url.Action("Add", "Home", new { id = string.Empty })">Add</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="@Url.Action("Index", "Home", new { id = string.Empty })">Report</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="@Url.Action("Graph", "Home", new { id = string.Empty })">Graph</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="@Url.Action("Logout", "Home", new { id = string.Empty })">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+}
