@@ -1,4 +1,5 @@
 ﻿using DataAccess.AzureStorage;
+using ExpenditureManagement.Logic;
 using ExpenditureManagement.Models;
 using Microsoft.WindowsAzure.Storage.Table;
 using System;
@@ -21,7 +22,7 @@ namespace ExpenditureManagement.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(LoginCred login)
+        public ActionResult Login(LoginCredentials login)
         {
             if (WebConfigAppSettingsAccess.UserEmail != login.UserName
                     || WebConfigAppSettingsAccess.Password != login.Password)
@@ -56,7 +57,13 @@ namespace ExpenditureManagement.Controllers
         public ActionResult Index()
         {
             if (GetCookieValue() != null)
-                return View();
+            {
+                ExpensesModels models = new ExpensesModels
+                {
+                    Years = ReadMetaData.GetYears(),
+                };
+                return View(models);
+            }
             else
             {
                 return RedirectToAction("Login", "Home", new { id = string.Empty });
@@ -101,8 +108,9 @@ namespace ExpenditureManagement.Controllers
 
             ExpensesModels models = new ExpensesModels
             {
-                ExpensesTypes = new ExecuteTableManager("ExpensesType", StorageCon).RetrieveEntity<ExpensesType>("PartitionKey eq '" + GetCookieValue() + "'").OrderBy(a => a.ExpensesTypeName).ToList(),
-                TransactionTypes = new ExecuteTableManager("TransactionType", StorageCon).RetrieveEntity<TransactionType>("PartitionKey eq '" + GetCookieValue() + "'").OrderBy(a => a.TransactionTypeName).ToList()
+                ExpensesTypes = ReadMetaData.GetExpensesTypes(),
+                TransactionTypes = ReadMetaData.GetTransactionTypes(),
+                Years = ReadMetaData.GetYears(),
             };
             if (!string.IsNullOrEmpty(id))
             {
@@ -169,7 +177,12 @@ namespace ExpenditureManagement.Controllers
         {
             if (GetCookieValue() == null)
                 return RedirectToAction("Login", "Home", new { id = string.Empty });
-            return View();
+
+            ExpensesModels models = new ExpensesModels
+            {
+                Years = ReadMetaData.GetYears(),
+            };
+            return View(models);
         }
 
         public JsonResult GraphBind(int Month, int Year)
@@ -177,7 +190,7 @@ namespace ExpenditureManagement.Controllers
             ExecuteTableManager tableManager = new ExecuteTableManager("ExpensesType", StorageCon);
             GraphModel gModel = new GraphModel
             {
-                labels = tableManager.RetrieveEntity<ExpensesType>("PartitionKey eq '" + GetCookieValue() + "' ").Where(a => a.ExpensesTypeName != null).Select(a => a.ExpensesTypeName).ToArray(),
+                labels = ReadMetaData.GetExpensesTypes().Select(a => a.ExpensesTypeName).ToArray(),
             };
 
             tableManager = new ExecuteTableManager("Expenses", StorageCon);
@@ -205,7 +218,7 @@ namespace ExpenditureManagement.Controllers
                     data.Add((int)gi.Amount); 
                 else
                     data.Add(0);
-                backgroundColor.Add(BackgroundColor.label[i]);
+                backgroundColor.Add(ReadMetaData.GetBackgroundColor()[i]);
             }
 
             gModel.datasets = new List<DataSet>
@@ -220,19 +233,6 @@ namespace ExpenditureManagement.Controllers
             };
 
             return Json(gModel, JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult WahtsApp()
-        {
-            if (GetCookieValue() == null)
-                return RedirectToAction("Login", "Home", new { id = string.Empty });
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult WahtsApp(string Number)
-        {
-            return Redirect("http://wa.me/+91" + Number);
         }
 
         public string GetCookieValue()

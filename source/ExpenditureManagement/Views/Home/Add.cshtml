@@ -81,7 +81,7 @@
                             @for (int i = 1; i < 13; i++)
                             {
                                 <option value="@i">
-                                    @(new DateTime(2024, i, 1).ToString("MMMM"))
+                                    @(new DateTime(2021, i, 1).ToString("MMMM"))
                                 </option>
                             }
                         </select>
@@ -94,7 +94,13 @@
                     <div class="col-4">
                         <label>Year <span class="text-danger">*</span></label>
                         <select required class="form-control" name="Year">
-                            <option value="2024" selected>2024</option>
+                            @foreach (var year in Model.Years)
+                            {
+                                <option value="@year"
+                                        @if (year == GenericLogic.IstNow.Year) { <text> selected</text>}>
+                                    @year
+                                </option>
+                            }
                         </select>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
-﻿
+﻿@model ExpenditureManagement.Models.ExpensesModels
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -34,8 +35,14 @@
                     </select>
                 </div>
                 <div class="col-6">
-                    <select required class="form-control" name="Year">
-                        <option value="2024" selected>2024</option>
+                    <select required class="form-control" name="Year" onchange="SearchData();">
+                        @foreach (var year in Model.Years)
+                        {
+                            <option value="@year"
+                                    @if (year == GenericLogic.IstNow.Year) { <text> selected</text>}>
+                                @year
+                            </option>
+                        }
                     </select>
                 </div>
             </div>
@@ -67,7 +74,7 @@
                 dataType: "text",
                 success: function (data) {
                     $('[data-table="report"]').html(data);
-                    Dt();
+                    DataTableBind();
                 },
                 failure: function (response) {
                     console.log(response.responseText);
@@ -92,7 +99,7 @@
                 dataType: "text",
                 success: function (data) {
                     $('[data-table="report"]').html(data);
-                    Dt();
+                    DataTableBind();
                 },
                 failure: function (response) {
                     console.log(response.responseText);
@@ -103,13 +110,13 @@
             });
         }
 
-        function Dt() {
+        function DataTableBind() {
             $('#example thead tr')
                 .clone(true)
                 .addClass('filters')
                 .appendTo('#example thead');
 
-            var table = $('#example').DataTable({
+            $('#example').DataTable({
                 orderCellsTop: true,
                 fixedHeader: true,
                 initComplete: function () {
@@ -125,7 +132,7 @@
                                 $(api.column(colIdx).header()).index()
                             );
                             var title = $(cell).text();
-                            $(cell).html('<input type="text" placeholder="' + title + '" />');
+                            $(cell).html('<input style="width: 100%" type="text" placeholder="' + title + '" />');
 
                             // On every keypress in this input
                             $(

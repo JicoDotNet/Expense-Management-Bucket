@@ -122,14 +122,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\AccessMetaData.cs" />
     <Compile Include="Logic\Extension.cs" />
     <Compile Include="Models\Expenses.cs" />
     <Compile Include="Models\ExpensesModels.cs" />
+    <Compile Include="Models\ExpensesType.cs" />
+    <Compile Include="Models\ExpensesTypes.cs" />
+    <Compile Include="Models\IExpensesType.cs" />
+    <Compile Include="Models\ITransactionType.cs" />
+    <Compile Include="Models\JsonMetaDataModel.cs" />
+    <Compile Include="Models\LoginCredentials.cs" />
+    <Compile Include="Models\TransactionType.cs" />
+    <Compile Include="Models\TransactionTypes.cs" />
     <Compile Include="Models\WebConfigAppSettingsAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="JsonMetaData.json" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
