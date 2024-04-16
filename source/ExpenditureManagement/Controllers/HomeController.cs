@@ -12,108 +12,11 @@ using System.Web.Mvc;
 
 namespace ExpenditureManagement.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        public ActionResult Login(string returnUrl)
+        [SessionAuthenticate]
+        public ActionResult Index(string id)
         {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Login(LoginCredentials login)
-        {
-            if (WebConfigAppSettingsAccess.UserEmail != login.UserEmail
-                    || WebConfigAppSettingsAccess.Password != login.Password)
-            {
-                TempData["success"] = "Either Email or Password is wrong!!";
-                return RedirectToAction("Login", "Home", new { id = string.Empty });
-            }
-            else
-            {
-                login.UserFullName = WebConfigAppSettingsAccess.UserFullName;
-                Response.Cookies.Add(new HttpCookie("Credentials")
-                {
-                    Value =  JsonConvert.SerializeObject(login),
-                    Expires = DateTime.Now.AddMonths(11)
-                });
-                return RedirectToAction("Add", "Home", new { id = string.Empty });
-            }            
-        }
-        
-        public ActionResult Logout()
-        {
-            if (GetCookieValue() != null)
-            {
-                var c = new HttpCookie("Credentials")
-                {
-                    Expires = DateTime.Now.AddDays(-1)
-                };
-                Response.Cookies.Add(c);
-            }
-            return RedirectToAction("Login", "Home", new { id = string.Empty });
-        }
-
-        public PartialViewResult MenuBind()
-        {
-            if (GetCookieValue() != null)
-            {
-                return PartialView("_PartialMenuBindPage", GetCookieValue());
-            }
-            return PartialView("_PartialMenuBindPage", null);
-        }
-
-        public ActionResult Index()
-        {
-            if (GetCookieValue() != null)
-            {
-                ExpensesModels models = new ExpensesModels
-                {
-                    Years = ReadMetaData.GetYears(),
-                };
-                return View(models);
-            }
-            else
-            {
-                return RedirectToAction("Login", "Home", new { id = string.Empty });
-            }
-        }
-
-        [HttpGet]
-        public JsonResult Tag()
-        {
-            ExecuteTableManager tableManager = new ExecuteTableManager("Expenses", WebConfigAppSettingsAccess.AzureStorageConnectionString);
-            ExpensesModels models = new ExpensesModels
-            {
-                Expensess = tableManager.RetrieveEntity<Expenses>("PartitionKey eq '" + GetCookieValue().UserEmail + "' " +
-                                                        " and IsDeleted eq false"),
-            };
-            var t = models.Expensess?.Select(x => x.Details).Distinct().ToArray();
-            return Json(models.Expensess?.Select(x => x.Details).Distinct(StringComparer.CurrentCultureIgnoreCase).OrderBy(a => a.ToString()).ToArray(), JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult Bind(int Month, int Year)
-        {
-            ExecuteTableManager tableManager = new ExecuteTableManager("Expenses", WebConfigAppSettingsAccess.AzureStorageConnectionString);
-            DateTime fromDt = new DateTime(Year, Month, 1);
-            DateTime ToDt = fromDt.AddMonths(1).AddSeconds(-1);
-
-            //TransactionDate ge datetime'2023-02-28T18:30:00.000Z' and TransactionDate lt datetime'2023-03-31T18:29:58.000Z'
-            string Q = "PartitionKey eq '" + GetCookieValue().UserEmail + "'" +
-                " and TransactionDate ge datetime'" + fromDt.ToString("o") + "' " +
-                                                                " and TransactionDate lt datetime'" + ToDt.ToString("o") + "'" +
-                                                                " and IsDeleted eq false";
-            ExpensesModels models = new ExpensesModels
-            {
-                Expensess = tableManager.RetrieveEntity<Expenses>(Q).OrderByDescending(a => a.TransactionDate).ThenByDescending(n => n.RowKey).ToList(),
-            };
-            return PartialView("_PartialViewPage", models);
-        }
-
-        public ActionResult Add(string id)
-        {
-            if (GetCookieValue() == null)
-                return RedirectToAction("Login", "Home", new { id = string.Empty });
-
             ExpensesModels models = new ExpensesModels
             {
                 ExpensesTypes = ReadMetaData.GetExpensesTypes(),
@@ -123,7 +26,7 @@ namespace ExpenditureManagement.Controllers
             if (!string.IsNullOrEmpty(id))
             {
                 models.Expenses = new ExecuteTableManager("Expenses", WebConfigAppSettingsAccess.AzureStorageConnectionString)
-                                .RetrieveEntity<Expenses>("PartitionKey eq '" + GetCookieValue().UserEmail + "' " +
+                                .RetrieveEntity<Expenses>("PartitionKey eq '" + Credential.UserEmail + "' " +
                                                 "and RowKey eq '" + id + "' and IsDeleted eq false")
                                 .FirstOrDefault();
                 if (models.Expenses == null)
@@ -135,13 +38,66 @@ namespace ExpenditureManagement.Controllers
             return View(models);
         }
 
+        public PartialViewResult MenuBind()
+        {
+            if (Credential != null)
+            {
+                return PartialView("_PartialMenuBindPage", Credential);
+            }
+            return PartialView("_PartialMenuBindPage", null);
+        }
+
+        [SessionAuthenticate]
+        public ActionResult Report()
+        {
+            ExpensesModels models = new ExpensesModels
+            {
+                Years = ReadMetaData.GetYears(),
+            };
+            return View(models);
+        }
+
+        [HttpGet]
+        [SessionAuthenticate]
+        public JsonResult Tag()
+        {
+            ExecuteTableManager tableManager = new ExecuteTableManager("Expenses", WebConfigAppSettingsAccess.AzureStorageConnectionString);
+            ExpensesModels models = new ExpensesModels
+            {
+                Expensess = tableManager.RetrieveEntity<Expenses>("PartitionKey eq '" + Credential.UserEmail + "' " +
+                                                        " and IsDeleted eq false"),
+            };
+            var t = models.Expensess?.Select(x => x.Details).Distinct().ToArray();
+            return Json(models.Expensess?.Select(x => x.Details).Distinct(StringComparer.CurrentCultureIgnoreCase).OrderBy(a => a.ToString()).ToArray(), JsonRequestBehavior.AllowGet);
+        }
+
+        [SessionAuthenticate]
+        public ActionResult Bind(int Month, int Year)
+        {
+            ExecuteTableManager tableManager = new ExecuteTableManager("Expenses", WebConfigAppSettingsAccess.AzureStorageConnectionString);
+            DateTime fromDt = new DateTime(Year, Month, 1);
+            DateTime ToDt = fromDt.AddMonths(1).AddSeconds(-1);
+
+            //TransactionDate ge datetime'2023-02-28T18:30:00.000Z' and TransactionDate lt datetime'2023-03-31T18:29:58.000Z'
+            string Q = "PartitionKey eq '" + Credential.UserEmail + "'" +
+                " and TransactionDate ge datetime'" + fromDt.ToString("o") + "' " +
+                                                                " and TransactionDate lt datetime'" + ToDt.ToString("o") + "'" +
+                                                                " and IsDeleted eq false";
+            ExpensesModels models = new ExpensesModels
+            {
+                Expensess = tableManager.RetrieveEntity<Expenses>(Q).OrderByDescending(a => a.TransactionDate).ThenByDescending(n => n.RowKey).ToList(),
+            };
+            return PartialView("_PartialReportViewPage", models);
+        }        
+
+        [SessionAuthenticate]
         public ActionResult Delete(string id)
         {
             ExecuteTableManager tableManager = new ExecuteTableManager("Expenses", WebConfigAppSettingsAccess.AzureStorageConnectionString);
             if (!string.IsNullOrEmpty(id))
             {
                 Expenses expenses = tableManager
-                                .RetrieveEntity<Expenses>("PartitionKey eq '" + GetCookieValue().UserEmail + "' " +
+                                .RetrieveEntity<Expenses>("PartitionKey eq '" + Credential.UserEmail + "' " +
                                                     " and RowKey eq '" + id + "' and IsDeleted eq false")
                                 .FirstOrDefault();
                 expenses.IsDeleted = true;
@@ -150,10 +106,9 @@ namespace ExpenditureManagement.Controllers
             }
             return RedirectToAction("Index", "Home", new { id = string.Empty });
         }
+       
 
-        
-
-        [HttpPost]
+        [SessionAuthenticate, HttpPost]
         public ActionResult Add(Expenses expenses)
         {
             ExecuteTableManager tableManager = new ExecuteTableManager("Expenses", WebConfigAppSettingsAccess.AzureStorageConnectionString);
@@ -165,25 +120,26 @@ namespace ExpenditureManagement.Controllers
             {
                 expenses.TransactionDate = GenericLogic.IstNow;
             }
-            expenses.PartitionKey = GetCookieValue().UserEmail;
+            expenses.PartitionKey = Credential.UserEmail;
             if (string.IsNullOrEmpty(expenses.RowKey))
             {
                 expenses.RowKey = GenericLogic.IstNow.TimeStamp().ToString();
                 tableManager.InsertEntity(expenses);
                 TempData["success"] = "Expenses <b>added</b> successfully";
-                return RedirectToAction("Add", "Home", new { id = string.Empty });
+                return RedirectToAction("Index", "Home", new { id = string.Empty });
             }
             else
             {
                 tableManager.InsertEntity(expenses, false);
                 TempData["success"] = "Expenses <b>Edited</b> successfully";
-                return RedirectToAction("Index", "Home", new { id = string.Empty });
+                return RedirectToAction("Report", "Home", new { id = string.Empty });
             }            
         }
 
+        [SessionAuthenticate]
         public ActionResult Graph()
         {
-            if (GetCookieValue() == null)
+            if (Credential == null)
                 return RedirectToAction("Login", "Home", new { id = string.Empty });
 
             ExpensesModels models = new ExpensesModels
@@ -193,6 +149,7 @@ namespace ExpenditureManagement.Controllers
             return View(models);
         }
 
+        [SessionAuthenticate]
         public JsonResult GraphBind(int Month, int Year)
         {
             ExecuteTableManager tableManager = new ExecuteTableManager("ExpensesType", WebConfigAppSettingsAccess.AzureStorageConnectionString);
@@ -204,7 +161,7 @@ namespace ExpenditureManagement.Controllers
             tableManager = new ExecuteTableManager("Expenses", WebConfigAppSettingsAccess.AzureStorageConnectionString);
             DateTime fromDt = new DateTime(Year, Month, 1);
             DateTime ToDt = fromDt.AddMonths(1).AddSeconds(-1);
-            string Q = "PartitionKey eq '" + GetCookieValue().UserEmail + "' and TransactionDate ge datetime'" + fromDt.ToString("o") + "' " +
+            string Q = "PartitionKey eq '" + Credential.UserEmail + "' and TransactionDate ge datetime'" + fromDt.ToString("o") + "' " +
                                                                 " and TransactionDate lt datetime'" + ToDt.ToString("o") + "'" +
                                                                 " and IsDeleted eq false";
             List<Expenses> expenses = tableManager.RetrieveEntity<Expenses>(Q);
@@ -241,23 +198,6 @@ namespace ExpenditureManagement.Controllers
             };
 
             return Json(gModel, JsonRequestBehavior.AllowGet);
-        }
-
-        private LoginCredentials GetCookieValue()
-        {
-            HttpCookie reqCookies = Request.Cookies["Credentials"];
-            if (reqCookies != null)
-            {
-                try
-                {
-                    return JsonConvert.DeserializeObject<LoginCredentials>(reqCookies.Value);
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-            return null;
         }
     }
 }
