@@ -9,6 +9,9 @@
     "Doctor/Medical/Medicine",
     "Daily Expenses"
   ],
+  "StartingYear": 2020,
+
+
   "BackgroundColors": [
     "rgb(94, 184, 250)",
     "rgb(250, 127, 5)",
@@ -26,6 +29,5 @@
     "rgb(249, 46, 238)",
     "rgb(162, 213, 37)",
     "rgb(50, 255, 122)"
-  ],
-  "StartingYear": 2020
+  ]
 }

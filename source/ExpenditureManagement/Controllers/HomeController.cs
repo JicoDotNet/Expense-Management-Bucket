@@ -87,7 +87,7 @@ namespace ExpenditureManagement.Controllers
             {
                 Expensess = tableManager.RetrieveEntity<Expenses>(Q).OrderByDescending(a => a.TransactionDate).ThenByDescending(n => n.RowKey).ToList(),
             };
-            return PartialView("_PartialViewPage", models);
+            return PartialView("_PartialReportViewPage", models);
         }        
 
         [SessionAuthenticate]
@@ -132,7 +132,7 @@ namespace ExpenditureManagement.Controllers
             {
                 tableManager.InsertEntity(expenses, false);
                 TempData["success"] = "Expenses <b>Edited</b> successfully";
-                return RedirectToAction("Index", "Home", new { id = string.Empty });
+                return RedirectToAction("Report", "Home", new { id = string.Empty });
             }            
         }
 

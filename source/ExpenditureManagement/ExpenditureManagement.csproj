@@ -148,7 +148,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Report.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\_PartialViewPage.cshtml" />
+    <Content Include="Views\Home\_PartialReportViewPage.cshtml" />
     <Content Include="Views\Home\Graph.cshtml" />
     <None Include="Properties\PublishProfiles\ExpensesManage - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ExpensesManage - Web Deploy.pubxml" />
