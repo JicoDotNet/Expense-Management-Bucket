@@ -10,7 +10,7 @@ namespace ExpenditureManagement.Controllers
         {
             if (Credential != null)
             {
-                var c = new HttpCookie("Credentials")
+                var c = new HttpCookie("Credential")
                 {
                     Expires = DateTime.Now.AddDays(-1)
                 };
