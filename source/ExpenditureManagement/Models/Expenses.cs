@@ -19,21 +19,4 @@ namespace ExpenditureManagement.Models
         public string Note { get; set; }
         public bool IsDeleted { get; set; }
     }
-
-    public class ExpensesType : TableEntity
-    {
-        public string ExpensesTypeName { get; set; }
-    }
-
-    public class TransactionType : TableEntity
-    {
-        public string TransactionTypeName { get; set; }
-    }
-
-    public class LoginCred: TableEntity
-    {
-        public string UserName { get; set;}
-        public string Password { get; set;}
-        public bool IsActive { get; set; }
-    }
 }

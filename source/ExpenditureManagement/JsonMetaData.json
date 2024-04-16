@@ -1,0 +1,31 @@
+{
+  "TransactionTypes": [
+    "UPI",
+    "Cash",
+    "Credit Card"
+  ],
+  "ExpensesTypes": [
+    "Fashion/Shopping",
+    "Doctor/Medical/Medicine",
+    "Daily Expenses"
+  ],
+  "BackgroundColors": [
+    "rgb(128, 0, 0)",
+    "rgb(255, 160, 122)",
+    "rgb(60, 20, 60)",
+    "rgb(17, 122, 101)",
+    "rgb(133, 193, 233)",
+    "rgb(133, 73, 233)",
+    "rgb(247, 220, 111)",
+    "rgb(195, 155, 211)",
+    "rgb(130, 224, 170)",
+    "rgb(187, 100, 128)",
+    "rgb(240, 93, 83)",
+    "rgb(250, 127, 5)",
+    "rgb(94, 184, 250)",
+    "rgb(249, 46, 238)",
+    "rgb(162, 213, 37)",
+    "rgb(50, 255, 122)"
+  ],
+  "StartingYear": 2020
+}

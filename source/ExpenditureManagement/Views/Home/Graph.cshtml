@@ -1,4 +1,5 @@
-﻿
+﻿@model ExpenditureManagement.Models.ExpensesModels
+
 @{
     ViewBag.Title = "Graph";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -23,8 +24,14 @@
                     </select>
                 </div>
                 <div class="col-6">
-                    <select required class="form-control" name="Year">
-                        <option value="2023" selected>2023</option>
+                    <select required class="form-control" name="Year" onchange="SearchData();">
+                        @foreach (var year in Model.Years)
+                        {
+                            <option value="@year"
+                                    @if (year == GenericLogic.IstNow.Year) { <text> selected</text>}>
+                                @year
+                            </option>
+                        }
                     </select>
                 </div>
             </div>
@@ -122,6 +129,6 @@
                 }
             });
         }
-        
+
     </script>
 }
