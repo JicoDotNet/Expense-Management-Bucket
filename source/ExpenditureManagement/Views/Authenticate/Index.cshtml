@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Authenticate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @if (TempData.ContainsKey("success"))
+    {
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["success"]
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+    @using (Html.BeginForm("Index", "Authenticate", FormMethod.Post))
+    {
+        <div class="row mt-3 justify-content-center">
+            <div class="col-md-6">
+                <div class="row mt-3">
+                    <div class="col">
+                        <label>Your Email</label>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Email" required name="UserEmail" />
+                            <div class="input-group-append">
+                                <button class="btn btn-success" type="button" onclick="SendOtp()">Send OTP</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-none" data-info="OTP">
+                    <div class="col">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            OTP Sent to your email address
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Email OTP</label>
+                        <input type="text" required name="Password"
+                               class="form-control" placeholder="OTP" />
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <label>Your Name</label>
+                        <input type="text" required name="UserFullName"
+                               class="form-control" placeholder="Name" />
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Script{
+    <script type="text/javascript">
+        function SendOtp() {
+            if ($.trim($('[name="UserEmail"]').val()) == '') {
+                $('[name="UserEmail"]').focus();
+                return;
+            }
+            var otpData = {
+                UserEmail: $('[name="UserEmail"]').val()
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("SendOTP", "Home")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(otpData),
+                success: function (data) {
+                    if (data) {
+                        $('[data-info="OTP"]').removeClass('d-none');
+                    }
+                },
+                failure: function (response) {
+                    console.log(response.responseText);
+                },
+                error: function (response) {
+                    console.log(response.responseText);
+                }
+            });
+        }
+    </script>
+
+}
