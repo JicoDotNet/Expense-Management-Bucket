@@ -80,7 +80,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "@Url.Action("SendOTP", "Home")",
+                url: "@Url.Action("SendOTP", "Authenticate")",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 data: JSON.stringify(otpData),
