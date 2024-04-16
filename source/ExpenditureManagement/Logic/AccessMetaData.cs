@@ -109,7 +109,7 @@ namespace ExpenditureManagement.Logic
                         && jsonObject.BackgroundColors != null
                         && jsonObject.BackgroundColors.Length > 0)
                     {
-                        return jsonObject.BackgroundColors;
+                        return Shuffle(jsonObject.BackgroundColors);
                     }
                     else
                     {
@@ -172,6 +172,20 @@ namespace ExpenditureManagement.Logic
             {
                 throw;
             }
+        }
+
+        private static T[] Shuffle<T>(T[] array)
+        {
+            var rng = new Random();
+            int n = array.Length;
+            while (n > 1)
+            {
+                int k = rng.Next(n--);
+                T temp = array[n];
+                array[n] = array[k];
+                array[k] = temp;
+            }
+            return array;
         }
     }
 }

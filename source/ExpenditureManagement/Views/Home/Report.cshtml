@@ -1,0 +1,174 @@
+﻿@model ExpenditureManagement.Models.ExpensesModels
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @if (TempData.ContainsKey("success"))
+    {
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @Html.Raw(TempData["success"])
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6">
+                    <select required class="form-control" name="Month" onchange="SearchData();">
+                        @for (int i = 1; i < 13; i++)
+                        {
+                            DateTime dt = new DateTime(2024, i, 1);
+                            <option value="@i"
+                                    @if (i == GenericLogic.IstNow.Month) { <text> selected </text> }>
+                                @dt.ToString("MMMM")
+                            </option>
+                        }
+                    </select>
+                </div>
+                <div class="col-6">
+                    <select required class="form-control" name="Year" onchange="SearchData();">
+                        @foreach (var year in Model.Years)
+                        {
+                            <option value="@year"
+                                    @if (year == GenericLogic.IstNow.Year) { <text> selected</text>}>
+                                @year
+                            </option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 table-responsive" data-table="report">
+        </div>
+    </div>
+</div>
+
+@section Script{
+    <script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"></script>
+
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="https: //cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var data = {
+                Month: $('[name="Month"]').val(),
+                Year: $('[name="Year"]').val(),
+            };
+            $('[data-table="report"]').html('<div class="overlay text-center m-4"><i class="fas fa-sync-alt fa-spin fa-2x"></i></div>');
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Bind", "Home")",
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                dataType: "text",
+                success: function (data) {
+                    $('[data-table="report"]').html(data);
+                    DataTableBind();
+                },
+                failure: function (response) {
+                    console.log(response.responseText);
+                },
+                error: function (response) {
+                    console.log(response.responseText);
+                }
+            });
+        });
+
+        function SearchData() {
+            var data = {
+                Month: $('[name="Month"]').val(),
+                Year: $('[name="Year"]').val(),
+            };
+            $('[data-table="report"]').html('<div class="overlay text-center m-4"><i class="fas fa-sync-alt fa-spin fa-2x"></i></div>');
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Bind", "Home")",
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                dataType: "text",
+                success: function (data) {
+                    $('[data-table="report"]').html(data);
+                    DataTableBind();
+                },
+                failure: function (response) {
+                    console.log(response.responseText);
+                },
+                error: function (response) {
+                    console.log(response.responseText);
+                }
+            });
+        }
+
+        function DataTableBind() {
+            $('#example thead tr')
+                .clone(true)
+                .addClass('filters')
+                .appendTo('#example thead');
+
+            $('#example').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true,
+                initComplete: function () {
+                    var api = this.api();
+
+                    // For each column
+                    api
+                        .columns()
+                        .eq(0)
+                        .each(function (colIdx) {
+                            // Set the header cell to contain the input element
+                            var cell = $('.filters th').eq(
+                                $(api.column(colIdx).header()).index()
+                            );
+                            var title = $(cell).text();
+                            $(cell).html('<input style="width: 100%" type="text" placeholder="' + title + '" />');
+
+                            // On every keypress in this input
+                            $(
+                                'input',
+                                $('.filters th').eq($(api.column(colIdx).header()).index())
+                            )
+                                .off('keyup change')
+                                .on('change', function (e) {
+                                    // Get the search value
+                                    $(this).attr('title', $(this).val());
+                                    var regexr = '({search})'; //$(this).parents('th').find('select').val();
+
+                                    var cursorPosition = this.selectionStart;
+                                    // Search the column for that value
+                                    api
+                                        .column(colIdx)
+                                        .search(
+                                            this.value != ''
+                                                ? regexr.replace('{search}', '(((' + this.value + ')))')
+                                                : '',
+                                            this.value != '',
+                                            this.value == ''
+                                        )
+                                        .draw();
+                                })
+                                .on('keyup', function (e) {
+                                    e.stopPropagation();
+
+                                    $(this).trigger('change');
+                                    $(this)
+                                        .focus()[0]
+                                        .setSelectionRange(cursorPosition, cursorPosition);
+                                });
+                        });
+                },
+            });
+        }
+    </script>
+}

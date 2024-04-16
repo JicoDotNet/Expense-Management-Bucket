@@ -118,12 +118,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logic\AccessMetaData.cs" />
     <Compile Include="Logic\Extension.cs" />
+    <Compile Include="Controllers\SessionAuthenticate.cs" />
     <Compile Include="Models\Expenses.cs" />
     <Compile Include="Models\ExpensesModels.cs" />
     <Compile Include="Models\ExpensesType.cs" />
@@ -142,15 +146,14 @@
     <Content Include="JsonMetaData.json" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Report.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Add.cshtml" />
     <Content Include="Views\Home\_PartialViewPage.cshtml" />
     <Content Include="Views\Home\Graph.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
     <None Include="Properties\PublishProfiles\ExpensesManage - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ExpensesManage - Web Deploy.pubxml" />
-    <Content Include="Views\Home\WahtsApp.cshtml" />
     <Content Include="Views\Home\_PartialMenuBindPage.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -160,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Logout\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
