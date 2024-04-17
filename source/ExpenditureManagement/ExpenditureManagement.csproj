@@ -65,6 +65,9 @@
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=106.12.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.12.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System.Spatial, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.8.2\lib\net40\System.Spatial.dll</HintPath>
     </Reference>
@@ -130,6 +133,7 @@
     <Compile Include="Logic\Extension.cs" />
     <Compile Include="Controllers\SessionAuthenticate.cs" />
     <Compile Include="Logic\GenericLogic.cs" />
+    <Compile Include="Logic\MailLogic.cs" />
     <Compile Include="Models\EmailOTP.cs" />
     <Compile Include="Models\Expenses.cs" />
     <Compile Include="Models\ExpensesModels.cs" />
@@ -153,11 +157,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_PartialReportViewPage.cshtml" />
     <Content Include="Views\Home\Graph.cshtml" />
-    <None Include="Properties\PublishProfiles\ExpensesManage - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\ExpensesManage - Web Deploy.pubxml" />
     <Content Include="Views\Home\_PartialMenuBindPage.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Authenticate\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\ExpenseManage-DotNet48 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ExpenseManage-DotNet48 - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ExpenseManage-DotNet48 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

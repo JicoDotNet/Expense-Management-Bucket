@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+#pragma warning disable CS4014
 
 namespace ExpenditureManagement.Controllers
 {
@@ -40,6 +41,16 @@ namespace ExpenditureManagement.Controllers
             emailOTP.IsActive = true;
 
             //Send mail
+            string filePath = Server.MapPath("~/OTP_Mail.html");
+            string html = string.Empty;
+            if (System.IO.File.Exists(filePath))
+            {
+                html = System.IO.File.ReadAllText(filePath);
+                html = html.Replace("{OTP}", emailOTP.OTP.ToString());
+            }
+            MailLogic.MailApi(emailOTP.UserEmail, "OTP Validation for Expense Management app", html);
+
+
             tableManager.InsertEntity(emailOTP);
             return Json(true);
         }
@@ -72,5 +83,5 @@ namespace ExpenditureManagement.Controllers
                 return RedirectToAction("Index", "Authenticate", new { id = string.Empty });
             }
         }
-    }
+    }    
 }
