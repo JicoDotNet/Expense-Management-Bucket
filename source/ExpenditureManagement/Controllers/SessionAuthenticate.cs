@@ -24,6 +24,7 @@ namespace System.Web.Mvc
                     try
                     {
                         LoginCredentials loginCredentials = JsonConvert.DeserializeObject<LoginCredentials>(cookie.Value);
+                        base.OnActionExecuting(filterContext);
                         return;
                     }
                     catch
