@@ -69,8 +69,28 @@
 
 @section Script{
     <script type="text/javascript">
+        function validateEmail(email) {
+            if (email.indexOf("@@") === -1) {
+                return false;
+            }
+            const [localPart, domainPart] = email.split("@@");
+
+            if (!localPart || !domainPart) {
+                return false;
+            }
+            if (domainPart.indexOf(".") === -1) {
+                return false;
+            }
+            return true;
+        }
+
         function SendOtp() {
             if ($.trim($('[name="UserEmail"]').val()) == '') {
+                $('[name="UserEmail"]').focus();
+                return;
+            }
+            if (!validateEmail($.trim($('[name="UserEmail"]').val()))) {
+                alert('enter a valid email address.')
                 $('[name="UserEmail"]').focus();
                 return;
             }
