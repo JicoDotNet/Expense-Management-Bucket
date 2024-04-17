@@ -151,8 +151,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_PartialReportViewPage.cshtml" />
     <Content Include="Views\Home\Graph.cshtml" />
-    <None Include="Properties\PublishProfiles\ExpensesManage - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\ExpensesManage - Web Deploy.pubxml" />
     <Content Include="Views\Home\_PartialMenuBindPage.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
@@ -164,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
