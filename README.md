@@ -68,7 +68,7 @@ Need to add here how to get connection string of AZ Table Storage
 
 ## Authors and Acknowledgment
 - **Soubhik Nandy** - _Initial work_ - [JicoDotNet](https://github.com/JicoDotNet)
-- See also the list of [contributors](https://github.com/JicoDotNet/Expense-Management-Bucket/tree/feature/readme-update#contributors) who participated in this project.
+- See also the list of [contributors](#contributors) who participated in this project.
 
 ### Contributors
 - **Tuhin Paul** - _Architecture_ - [Tuhin](#)
