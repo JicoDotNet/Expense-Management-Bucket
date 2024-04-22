@@ -5,19 +5,6 @@
 ## Table of Contents
 <!--ts-->
 * Overview & Description
-* Getting Started
-  * Prerequisites
-  * Installation
-* Usage
-* Running the Tests
-* Deployment
-* Built With
-* Contributing
-* Versioning
-* Authors and Acknowledgment
-* License
-* Contact
-* Project Status
 <!--te-->
 
 - [Overview & Description](#overview--description)
