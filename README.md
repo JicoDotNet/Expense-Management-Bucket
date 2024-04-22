@@ -14,6 +14,7 @@ Provide examples or instructions on how to use the project. This could include c
 
 ## Demo 
 - URL - https://expensemanage-dotnet48.azurewebsites.net/
+- You have to authenticate your identity by your email OTP.
 
 ## Getting Started
 Let's start with development & deployment at your own system & server.
@@ -41,6 +42,8 @@ A step-by-step series of examples that tell you how to get a development environ
 
 ### Deployment
 Notes about how to deploy this on a live system.
+
+#### Azure Table Storage 
 
 ## Authors and Acknowledgment
 - **Soubhik Nandy** - _Initial work_ - [JicoDotNet](https://github.com/JicoDotNet)
