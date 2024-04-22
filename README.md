@@ -13,13 +13,12 @@
   - [Installation](#installation)
   - [Deployment](#deployment)
     - [Azure Table Storage](#azure-table-storage)
-- Built With
-- Contributing
-- Versioning
-- Authors and Acknowledgment
-- License
-- Contact
-- Project Status
+- [Authors and Acknowledgment](#authors-and-acknowledgment)
+- [Contributing](#contributing)
+- [Versioning](#versioning)
+- [License](#license)
+- [Contact](#contact)
+- [Project Status](#project-status)
 
 ## Overview & Description
 Briefly describe what the project does and its intended use.
