@@ -2,6 +2,23 @@
 # Expense Management App
 **_Expense Management_** app is an `ASP.NET` application designed to simplify and automate the process of managing personal and business expenses. It provides a user-friendly interface for tracking, categorizing, and analyzing expenses in Graphical representation to help maintain financial discipline and budgeting.
 
+## Table of Contents
+- Overview & Description
+- Getting Started
+  - Prerequisites
+  - Installation
+- Usage
+- Running the Tests
+- Deployment
+- Built With
+- Contributing
+- Versioning
+- Authors and Acknowledgment
+- License
+- Contact
+- Project Status
+
+
 ## Overview & Description
 Briefly describe what the project does and its intended use.
 
@@ -38,7 +55,7 @@ A step-by-step series of examples that tell you how to get a development environ
     - Or download the project from Github `https://github.com/JicoDotNet/Expense-Management-Bucket`
 2. Open the solution in Visual Studio.
 3. Restore the NuGet packages.
-4. Update the connection string in `web.config`.
+4. Update the connection string in `web.config`
 5. Run the application.
 
 ### Deployment
