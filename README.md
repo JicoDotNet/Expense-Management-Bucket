@@ -7,10 +7,12 @@
 - [Features](#features)
 - [Usage](#usage)
 - [Demo](#demo)
-- Getting Started
-  - Prerequisites
-  - Installation
-  - Deployment
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Tech Stack](#tech-stack)
+  - [Installation](#installation)
+  - [Deployment](#deployment)
+    - [Azure Table Storage](#azure-table-storage)
 - Built With
 - Contributing
 - Versioning
