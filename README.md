@@ -3,7 +3,24 @@
 **_Expense Management_** app is an `ASP.NET` application designed to simplify and automate the process of managing personal and business expenses. It provides a user-friendly interface for tracking, categorizing, and analyzing expenses in Graphical representation to help maintain financial discipline and budgeting.
 
 ## Table of Contents
-- Overview & Description
+<!--ts-->
+* Overview & Description
+* Getting Started
+  * Prerequisites
+  * Installation
+* Usage
+* Running the Tests
+* Deployment
+* Built With
+* Contributing
+* Versioning
+* Authors and Acknowledgment
+* License
+* Contact
+* Project Status
+<!--te-->
+
+- [Overview & Description](#overview--description)
 - Getting Started
   - Prerequisites
   - Installation
