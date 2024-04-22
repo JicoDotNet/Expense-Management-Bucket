@@ -19,17 +19,21 @@ Provide examples or instructions on how to use the project. This could include c
 Let's start with development & deployment at your own system & server.
 ### Prerequisites
 What things you need to install the software and how to install them.
--  Windows 10 or 11 with [Visual Studio 2022](https://visualstudio.microsoft.com/vs/community) >= v.17.9.* `community`
+-  Windows 10 or 11 with [Visual Studio 2022](https://visualstudio.microsoft.com/vs/community) >= v.17.9.* `community edition`
 - [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-developer-pack-offline-installer) SDK `dev` `build`
+- Azure Portal Account (https://portal.azure.com/)
 
 ### Tech Stack
-- Asp.Net
-- [AzureTableStorage](https://learn.microsoft.com/en-us/azure/storage/tables/table-storage-overview)
-- C#
+- [Asp.Net Framework v4.8.*](https://dotnet.microsoft.com/en-us/learn/aspnet/what-is-aspnet)
+- [Azure Table Storage](https://learn.microsoft.com/en-us/azure/storage/tables/table-storage-overview)
+- [C#](https://dotnet.microsoft.com/en-us/languages/csharp)
 
 ### Installation
 A step-by-step series of examples that tell you how to get a development environment running.
-1. Clone the repository using `git clone https://github.com/JicoDotNet/Expense-Management-Bucket.git`.
+
+1. Get the project
+    - Clone the repository using `git clone https://github.com/JicoDotNet/Expense-Management-Bucket.git`.
+    - Or download the project from Github `https://github.com/JicoDotNet/Expense-Management-Bucket`
 2. Open the solution in Visual Studio.
 3. Restore the NuGet packages.
 4. Update the connection string in `web.config`.
