@@ -81,7 +81,7 @@ We use SemVer for versioning. For the versions available, see the [tags on this 
 
 ## License
 This project is licensed under the MIT License - see the [`LICENSE`](https://github.com/JicoDotNet/Expense-Management-Bucket/blob/master/LICENSE) file for details.
-[MIT License](https://choosealicense.com/licenses/mit/)
+- [MIT License](https://choosealicense.com/licenses/mit/)
 
 ## Contact
 Contact information for the project maintainers.
