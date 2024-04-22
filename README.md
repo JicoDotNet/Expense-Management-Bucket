@@ -33,8 +33,8 @@ Provide examples or instructions on how to use the project. This could include c
 
 ## Demo 
 - URL - https://expensemanage-dotnet48.azurewebsites.net/
-- You have to authenticate your identity by your email OTP.  ✨
-> This OTP authentication is only demo purpose.
+- You have to authenticate your identity by your email OTP.
+> This OTP authentication is only demo purpose. ✨
 
 ## Getting Started
 Let's start with development & deployment at your own system & server.
