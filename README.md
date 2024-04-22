@@ -14,6 +14,7 @@
   - [Deployment](#deployment)
     - [Azure Table Storage](#azure-table-storage)
 - [Authors and Acknowledgment](#authors-and-acknowledgment)
+  - [Contributors](#contributors)
 - [Contributing](#contributing)
 - [Versioning](#versioning)
 - [License](#license)
@@ -67,7 +68,10 @@ Need to add here how to get connection string of AZ Table Storage
 
 ## Authors and Acknowledgment
 - **Soubhik Nandy** - _Initial work_ - [JicoDotNet](https://github.com/JicoDotNet)
-- See also the list of [contributors](https://github.com/JicoDotNet/Expense-Management-Bucket/tree/feature/readme-update#contributing) who participated in this project.
+- See also the list of [contributors](https://github.com/JicoDotNet/Expense-Management-Bucket/tree/feature/readme-update#contributors) who participated in this project.
+
+### Contributors
+- **Tuhin Paul** - _Architecture_ - [Tuhin](#)
 
 ## Contributing
 Explain how others can contribute to the project. This may include guidelines for submitting bug reports, feature requests, or pull requests.
