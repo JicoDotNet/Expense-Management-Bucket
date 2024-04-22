@@ -4,12 +4,13 @@
 
 ## Table of Contents
 - [Overview & Description](#overview--description)
+- [Features](#features)
+- [Usage](#usage)
+- [Demo](#demo)
 - Getting Started
   - Prerequisites
   - Installation
-- Usage
-- Running the Tests
-- Deployment
+  - Deployment
 - Built With
 - Contributing
 - Versioning
@@ -17,7 +18,6 @@
 - License
 - Contact
 - Project Status
-
 
 ## Overview & Description
 Briefly describe what the project does and its intended use.
