@@ -90,11 +90,30 @@ A step-by-step series of examples that tell you how to get a development environ
 6. Run the application.
 
 ### Deployment
-Notes about how to deploy this on a live system.
+You can deploy this project any windows based server.
+**Deployment requirements**
+``` text
+1. Windows OS
+2. IIS Server
+3. .NET Framework 4.8
+4. Azure Table Storage Connection String
+```
 
 #### Azure Table Storage 
-Need to add here how to get connection string of AZ Table Storage
+Azure Table Storage is a cloud-based service that stores structured NoSQL data, providing a key/attribute store with a schemaless design. It’s part of the Microsoft Azure cloud platform and allows for the storage of large amounts of non-relational data.
+Azure Table Storage is ideal for storing datasets that do not require complex joins or foreign keys, such as user data for web applications, address books, and device information.
 
+> Generate the connection string of **Azure Table Storage** from [Azure Portal](https://portal.azure.com)
+> To generate an Azure Table Storage connection string from the Azure Portal, follow these steps:
+> 1. Navigate to your **storage account** in the Azure Portal.
+> 2. In the **Security + networking** section, locate the Access keys setting.
+> 3. Click on the **Show keys** button at the top of the page to display the account keys and associated connection strings.
+> 4. Copy the **Connection string** provided there.
+
+**The Connection String is looks like:**
+``` xml
+DefaultEndpointsProtocol=https;AccountName=[yourAccountName];AccountKey=[yourAccountKey]
+```
 ## Authors and Acknowledgment
 - **Soubhik Nandy** - _Initial work_ - [@JicoDotNet](https://github.com/JicoDotNet) - Code Owner
 - See also the list of [contributors](#contributors) who participated in this project.
