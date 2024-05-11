@@ -128,7 +128,7 @@ Remember to always read the project’s CONTRIBUTING.md file, if one exists, as 
 ## Versioning & Change log
 We use SemVer for versioning. For the versions available, see the [tags on this repository](https://github.com/JicoDotNet/Expense-Management-Bucket).
 
-#### V1.1
+### V1.1
 ##### New/Changed/Removed features
 N/A
 ##### Fixed defects
@@ -136,7 +136,7 @@ N/A
 ##### Maintenance/Miscellaneous
 - Add `JsonMetaData.json` to handel master data
 
-#### V1.0
+### V1.0
 ##### New/Changed/Removed features
 Initial implementation of this app
 ##### Features
