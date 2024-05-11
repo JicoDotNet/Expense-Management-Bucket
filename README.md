@@ -18,10 +18,13 @@
   - [Contributors](#contributors)
 - [Contributing](#contributing)
 - [Versioning](#versioning)
+  - [Change log](#Change-log)
+    - [V1.0](#)
+    - [V1.1](#)
 - [License](#license)
 - [Contact](#contact)
 - [Project Status](#project-status)
-- [Note](#note)
+  - [Note](#note)
 
 ## Overview & Description
 This web-based expense manager app serves as a pivotal financial tool designed to track and manage your daily expenses. It’s engineered to offer a seamless interface for **logging transactions**, **organizing expenses** into categories, and **visually presenting** data through **intuitive graphs**. It provides a convenient way to record transactions, categorize spending with real-time insights into your financial habits. 
@@ -54,8 +57,8 @@ _In essence, anyone looking to gain better control over their financial situatio
 ### Screenshots
 - [Add Record Image](https://github.com/JicoDotNet/Expense-Management-Bucket/assets/54305438/1d5c8bc6-5998-4510-997b-4c19b1b4e8d3)
 - [Report Image](https://github.com/JicoDotNet/Expense-Management-Bucket/assets/54305438/e1447810-488c-4df4-8697-95636b86dfc8)
-
-![Graph Image](https://github.com/JicoDotNet/Expense-Management-Bucket/assets/54305438/7d2d503a-d4b0-4350-9ffc-e03dc58745ee)
+- [Intuitive Graphs Image](https://github.com/JicoDotNet/Expense-Management-Bucket/assets/54305438/7d2d503a-d4b0-4350-9ffc-e03dc58745ee)
+![Intuitive Graphs Image](https://github.com/JicoDotNet/Expense-Management-Bucket/assets/54305438/7d2d503a-d4b0-4350-9ffc-e03dc58745ee)
 
 ## Demo 
 - URL - https://expensemanage-dotnet48.azurewebsites.net/
@@ -95,11 +98,11 @@ Notes about how to deploy this on a live system.
 Need to add here how to get connection string of AZ Table Storage
 
 ## Authors and Acknowledgment
-- **Soubhik Nandy** - _Initial work_ - [JicoDotNet](https://github.com/JicoDotNet)
+- **Soubhik Nandy** - _Initial work_ - [@JicoDotNet](https://github.com/JicoDotNet)
 - See also the list of [contributors](#contributors) who participated in this project.
 
 ### Contributors
-- **Tuhin Paul** - _Architecture_ - [Tuhin](#)
+- **Tuhin Paul** - _Architecture_ - [@codewithtuhin](#https://github.com/codewithtuhin)
 
 ## Contributing
 Explain how others can contribute to the project. This may include guidelines for submitting bug reports, feature requests, or pull requests.
@@ -107,12 +110,37 @@ Explain how others can contribute to the project. This may include guidelines fo
 ## Versioning
 We use SemVer for versioning. For the versions available, see the [tags on this repository](https://github.com/JicoDotNet/Expense-Management-Bucket).
 
+### Change log
+
+#### V1.1
+##### New/Changed/Removed features
+N/A
+##### Fixed defects
+N/A
+##### Maintenance/Miscellaneous
+- Add `JsonMetaData.json` to handel master data
+
+#### V1.0
+##### New/Changed/Removed features
+Initial implementation of this app
+##### Features
+- Login Page
+- Tranction Record add page
+- Report Page
+- Intuitive Graphs
+
+##### Maintenance/Miscellaneous
+N/A
+
 ## License
 This project is licensed under the MIT License - see the [`LICENSE`](https://github.com/JicoDotNet/Expense-Management-Bucket/blob/master/LICENSE) file for details.
-- [MIT License](https://choosealicense.com/licenses/mit/)
+- [MIT License Details](https://choosealicense.com/licenses/mit/)
 
 ## Contact
 Contact information for the project maintainers.
 
 ## Project Status
-The project is currently in the alpha stage; active development is in progress.
+The project is currently in the `alpha` stage; active development is in progress.
+
+### Note
+This project was built and develop in early 2021. In January 2024 it is migrated from Azure DevOps to Github.
