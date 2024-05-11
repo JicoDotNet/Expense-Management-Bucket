@@ -104,7 +104,8 @@ You can deploy this project any windows based server.
 Azure Table Storage is a cloud-based service that stores structured NoSQL data, providing a key/attribute store with a schemaless design. It’s part of the Microsoft Azure cloud platform and allows for the storage of large amounts of non-relational data.
 Azure Table Storage is ideal for storing datasets that do not require complex joins or foreign keys, such as user data for web applications, address books, and device information.
 
-> Generate the connection string of **Azure Table Storage** from [Azure Portal](https://portal.azure.com). 
+_Generate the connection string of **Azure Table Storage** from [Azure Portal](https://portal.azure.com)._
+
 > To generate an Azure Table Storage connection string from the Azure Portal, follow these steps:
  1. Navigate to your **storage account** in the Azure Portal.
  2. In the **Security + networking** section, locate the Access keys setting.
