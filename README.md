@@ -20,9 +20,13 @@
 - [License](#license)
 - [Contact](#contact)
 - [Project Status](#project-status)
+- [Note](#note)
 
 ## Overview & Description
-Briefly describe what the project does and its intended use.
+This web-based expense manager app serves as a pivotal financial tool designed to track and manage your daily expenses. It’s engineered to offer a seamless interface for **logging transactions**, **organizing expenses** into categories, and **visually presenting** data through **intuitive graphs**. It provides a convenient way to record transactions, categorize spending with real-time insights into your financial habits. 
+By delivering real-time insights into your spending behavior, our app empowers you to make well-informed choices that align with your financial objectives and aspirations.
+
+It helps you make informed decisions to achieve your personal finance expense and goals.  
 
 ## Features
 List and describe the main features of the project. This helps users understand what the project can do and what problems it can solve.
