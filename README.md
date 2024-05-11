@@ -104,6 +104,7 @@ Need to add here how to get connection string of AZ Table Storage
 
 ## Contributing
 This project is a collaborative effort that can involve various forms of participation. Here’s a guide on how you can contribute:
+
 **Submitting Bug Reports**
 - **Identify the Bug:** Clearly describe the issue you’ve encountered. Include details such as the context in which the bug occurred, steps to reproduce it, and the expected vs. actual results.
 - **Check Existing Issues:** Before submitting a new bug report, search the project’s issues to ensure it hasn’t been reported already.
