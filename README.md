@@ -123,7 +123,9 @@ This project is a collaborative effort that can involve various forms of partici
 - **Write Tests:** If the project has tests, add tests for your changes to ensure they work as expected.
 - **Pull Request:** Submit a pull request to the original repository. Fill in the provided PR template with details of your changes.
 - **Code Review:** Be open to feedback and make requested changes during the code review process.
-Remember to always read the project’s CONTRIBUTING.md file, if one exists, as it will contain specific guidelines tailored for the project’s needs. You are open to contribute. Happy contributing! 🚀
+
+Remember to always read the project’s CONTRIBUTING.md file, as it will contain specific guidelines tailored for the project’s needs. You are open to contribute. 
+Happy contributing! 🚀
 
 ## Versioning & Change log
 We use SemVer for versioning. For the versions available, see the [tags on this repository](https://github.com/JicoDotNet/Expense-Management-Bucket).
@@ -153,7 +155,8 @@ This project is licensed under the MIT License - see the [`LICENSE`](https://git
 - [MIT License Details](https://choosealicense.com/licenses/mit/)
 
 ## Contact
-Contact information for the project maintainers.
+Anyone can contact us regarding this project.
+> Email: `github.connect@soubhiknandy.com`
 
 ## Project Status
 The project is currently in the `alpha` stage; active development is in progress.
