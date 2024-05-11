@@ -100,6 +100,16 @@ You can deploy this project any windows based server.
 4. Azure Table Storage Connection String
 ```
 
+**Steps to Deploy →**
+- Change `Web.config` file with
+  - Connection String of Azure Table Storage
+  - Login Credentials
+- Change Master Data from `JsonMetaData.json` with
+  - `TransactionTypes` for type of transaction
+  - `ExpensesTypes` for categorization
+  - `StartingYear` which should be less then current year
+
+
 #### Azure Table Storage 
 Azure Table Storage is a cloud-based service that stores structured NoSQL data, providing a key/attribute store with a schemaless design. It’s part of the Microsoft Azure cloud platform and allows for the storage of large amounts of non-relational data.
 Azure Table Storage is ideal for storing datasets that do not require complex joins or foreign keys, such as user data for web applications, address books, and device information.
@@ -116,6 +126,8 @@ _Generate the connection string of **Azure Table Storage** from [Azure Portal](h
 ``` xml
 DefaultEndpointsProtocol=https;AccountName=[yourAccountName];AccountKey=[yourAccountKey]
 ```
+
+
 ## Authors and Acknowledgment
 - **Soubhik Nandy** - _Initial work_ - [@JicoDotNet](https://github.com/JicoDotNet) - Code Owner
 - See also the list of [contributors](#contributors) who participated in this project.
