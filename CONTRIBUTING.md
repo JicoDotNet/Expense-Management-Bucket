@@ -58,4 +58,4 @@ Unsure where to begin? You can start by looking at `good first issue` and `help 
 
 Join the community! We have a Discord server, Slack channel, or Forum where you can discuss the project with other contributors.
 
-Thank you for contributing to [Your Project Name]! 🌟
+Thank you for contributing to `Expense Management` app! 🌟
