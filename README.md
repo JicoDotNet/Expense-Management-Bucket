@@ -101,13 +101,13 @@ You can deploy this project any windows based server.
 ```
 
 **Steps to Deploy →**
-1. Change `Web.config` file with
-  1.1. Connection String of Azure Table Storage
-  1.2. Login Credentials
-2. Change Master Data from `JsonMetaData.json` with
-  2.1. `TransactionTypes` for type of transaction
-  2.2. `ExpensesTypes` for categorization
-  2.3. `StartingYear` which should be less then current year
+- 1. Change `Web.config` file with
+  - 1.1. Connection String of Azure Table Storage
+  - 1.2. Login Credentials
+- 2. Change Master Data from `JsonMetaData.json` with
+  - 2.1. `TransactionTypes` for type of transaction
+  - 2.2. `ExpensesTypes` for categorization
+  - 2.3. `StartingYear` which should be less then current year
 
 
 #### Azure Table Storage 
