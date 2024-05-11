@@ -23,7 +23,6 @@
 - [License](#license)
 - [Contact](#contact)
 - [Project Status](#project-status)
-  - [Note](#note)
 
 ## Overview & Description
 This web-based expense manager app serves as a pivotal financial tool designed to track and manage your daily expenses. It’s engineered to offer a seamless interface for **logging transactions**, **organizing expenses** into categories, and **visually presenting** data through **intuitive graphs**. It provides a convenient way to record transactions, categorize spending with real-time insights into your financial habits. 
@@ -157,6 +156,4 @@ Contact information for the project maintainers.
 
 ## Project Status
 The project is currently in the `alpha` stage; active development is in progress.
-
-### Note
-This project was built and develop in early 2021. In January 2024 it is migrated from Azure DevOps to Github.
+> This project was built and develop in early 2021. In January 2024 it is migrated from Azure DevOps to Github.
