@@ -55,15 +55,16 @@ _In essence, anyone looking to gain better control over their financial situatio
 - [Add Record Image](https://github.com/JicoDotNet/Expense-Management-Bucket/assets/54305438/1d5c8bc6-5998-4510-997b-4c19b1b4e8d3)
 - [Report Image](https://github.com/JicoDotNet/Expense-Management-Bucket/assets/54305438/e1447810-488c-4df4-8697-95636b86dfc8)
 
-- ![Graph Image](https://github.com/JicoDotNet/Expense-Management-Bucket/assets/54305438/7d2d503a-d4b0-4350-9ffc-e03dc58745ee)
+![Graph Image](https://github.com/JicoDotNet/Expense-Management-Bucket/assets/54305438/7d2d503a-d4b0-4350-9ffc-e03dc58745ee)
 
 ## Demo 
 - URL - https://expensemanage-dotnet48.azurewebsites.net/
 - You have to authenticate your identity by your email OTP.
-> This OTP authentication is only demo purpose. ✨
+> _This OTP authentication is only demo purpose._ ✨
 
 ## Getting Started
-Let's start with development & deployment at your own system & server. It's required some software development knowledge.
+Let's start with development & deployment at your own system & server. 
+> _It's required some software development knowledge._
 ### Prerequisites
 What things you need to install the software and how to install them.
 -  Windows 10 or 11 with [Visual Studio 2022](https://visualstudio.microsoft.com/vs/community) >= v.17.9.* `community edition`
@@ -84,7 +85,8 @@ A step-by-step series of examples that tell you how to get a development environ
 2. Open the solution in Visual Studio.
 3. Restore the NuGet packages.
 4. Update the connection string in `web.config`
-5. Run the application.
+5. (Optional) If required, update muster data in `JsonMetaData.json`
+6. Run the application.
 
 ### Deployment
 Notes about how to deploy this on a live system.
