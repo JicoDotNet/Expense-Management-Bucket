@@ -26,7 +26,7 @@
 This web-based expense manager app serves as a pivotal financial tool designed to track and manage your daily expenses. It’s engineered to offer a seamless interface for **logging transactions**, **organizing expenses** into categories, and **visually presenting** data through **intuitive graphs**. It provides a convenient way to record transactions, categorize spending with real-time insights into your financial habits. 
 By delivering real-time insights into your spending behavior, our app empowers you to make well-informed choices that align with your financial objectives and aspirations.
 
-It helps you make informed decisions to achieve your personal finance expense and goals.  
+_• It helps you make informed decisions to achieve your personal finance expense and goals._
 
 ## Features
 Whether you’re looking to track daily expenditures, manage household budgets, or simply gain better control over your finances, an expense manager app is an essential tool for modern financial wellbeing.
@@ -39,7 +39,16 @@ Whether you’re looking to track daily expenditures, manage household budgets, 
 - **Convenience:** Manage your finances on-the-go and keep your financial life organized in one place.
 
 ## Usage
-Provide examples or instructions on how to use the project. This could include code snippets, command-line examples, or screenshots.
+An expense management app is a versatile tool designed to cater to a wide range of users who wish to track and manage their finances. Here’s a brief note on who can benefit from using such an app:
+
+- **Individuals and Families:** For personal budgeting, tracking daily expenses, and planning for savings and investments.
+- **Freelancers and Self-Employed Professionals:** To monitor project costs, manage invoices.
+- **Small Business Owners:** To oversee operational expenses, employee reimbursements, and financial reporting.
+- **Corporate Employees:** To submit work-related expenses for approval and reimbursement.
+- **Travelers:** To keep track of travel expenses and stay within budget.
+- **Students:** To manage limited budgets, track spending, and save for future expenses.
+
+_In essence, anyone looking to gain better control over their financial situation can utilize this app to simplify and streamline the process of financial tracking._
 
 ## Demo 
 - URL - https://expensemanage-dotnet48.azurewebsites.net/
