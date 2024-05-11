@@ -6,7 +6,7 @@
 - [Overview & Description](#overview--description)
 - [Features](#features)
 - [Usage](#usage)
-  - [Screenshot](#screenshot)  
+  - [Screenshots](#screenshots)  
 - [Demo](#demo)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -51,7 +51,7 @@ An expense management app is a versatile tool designed to cater to a wide range 
 
 _In essence, anyone looking to gain better control over their financial situation can utilize this app to simplify and streamline the process of financial tracking._
 
-### Screenshot
+### Screenshots
 - [Add Record Image](https://github.com/JicoDotNet/Expense-Management-Bucket/assets/54305438/1d5c8bc6-5998-4510-997b-4c19b1b4e8d3)
 - [Report Image](https://github.com/JicoDotNet/Expense-Management-Bucket/assets/54305438/e1447810-488c-4df4-8697-95636b86dfc8)
 
