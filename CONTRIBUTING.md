@@ -1,6 +1,6 @@
-# Contributing to [Your Project Name]
+# Contributing to Expense Management app
 
-👋 Welcome, and thank you for considering contributing to [Your Project Name]. Your help is essential for keeping it great.
+👋 Welcome, and thank you for considering contributing to `Expense Management` app. Your help is essential for keeping it great.
 
 ## Getting Started
 
