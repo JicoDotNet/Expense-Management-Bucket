@@ -6,6 +6,7 @@
 - [Overview & Description](#overview--description)
 - [Features](#features)
 - [Usage](#usage)
+  - [Screenshot](#screenshot)  
 - [Demo](#demo)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -50,13 +51,16 @@ An expense management app is a versatile tool designed to cater to a wide range 
 
 _In essence, anyone looking to gain better control over their financial situation can utilize this app to simplify and streamline the process of financial tracking._
 
+### Screenshot
+Goes HERE
+
 ## Demo 
 - URL - https://expensemanage-dotnet48.azurewebsites.net/
 - You have to authenticate your identity by your email OTP.
 > This OTP authentication is only demo purpose. ✨
 
 ## Getting Started
-Let's start with development & deployment at your own system & server.
+Let's start with development & deployment at your own system & server. It's required some software development knowledge.
 ### Prerequisites
 What things you need to install the software and how to install them.
 -  Windows 10 or 11 with [Visual Studio 2022](https://visualstudio.microsoft.com/vs/community) >= v.17.9.* `community edition`
