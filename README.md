@@ -101,7 +101,7 @@ Need to add here how to get connection string of AZ Table Storage
 - See also the list of [contributors](#contributors) who participated in this project.
 
 ### Contributors
-- **Tuhin Paul** - _Architecture_ - [@codewithtuhin](#https://github.com/codewithtuhin)
+- **Tuhin Paul** - _Architecture_ - [@codewithtuhin](https://github.com/codewithtuhin)
 
 ## Contributing
 This project is a collaborative effort that can involve various forms of participation. Here’s a guide on how you can contribute:
