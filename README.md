@@ -25,13 +25,13 @@
 - [Project Status](#project-status)
 
 ## Overview & Description
-This web-based expense manager app serves as a pivotal financial tool designed to track and manage your daily expenses. It’s engineered to offer a seamless interface for **logging transactions**, **organizing expenses** into categories, and **visually presenting** data through **intuitive graphs**. It provides a convenient way to record transactions, categorize spending with real-time insights into your financial habits. 
-By delivering real-time insights into your spending behavior, our app empowers you to make well-informed choices that align with your financial objectives and aspirations.
+This web-based expense manager app serves as a pivotal financial tool designed to track and manage your daily expenses. It’s engineered to offer a seamless interface for **logging transactions**, **organizing expenses** into categories, and **visually presenting** data through **intuitive graphs**. It provides a convenient way to record transactions and categorize spending with real-time insights into your financial habits. 
+By delivering real-time insights into your spending behaviour, our app empowers you to make well-informed choices that align with your financial objectives and aspirations.
 
-_• It helps you make informed decisions to achieve your personal finance expense and goals._
+_• It helps you make informed decisions to achieve your personal finance expenses and goals._
 
 ## Features
-Whether you’re looking to track daily expenditures, manage household budgets, or simply gain better control over your finances, an expense manager app is an essential tool for modern financial wellbeing.
+Whether you’re looking to track daily expenditures, manage household budgets, or simply gain better control over your finances, an expense manager app is an essential tool for modern financial well-being.
 
 - **Transaction Tracking:** Log every expense with a few clicks. Add details like amount, category, date, and notes.
 - **Budget Planning:** Set monthly or custom period budgets for different categories and monitor your progress.
@@ -47,7 +47,7 @@ An expense management app is a versatile tool designed to cater to a wide range 
 - **Freelancers and Self-Employed Professionals:** To monitor project costs, manage invoices.
 - **Small Business Owners:** To oversee operational expenses, employee reimbursements, and financial reporting.
 - **Corporate Employees:** To submit work-related expenses for approval and reimbursement.
-- **Travelers:** To keep track of travel expenses and stay within budget.
+- **Travellers:** To keep track of travel expenses and stay within budget.
 - **Students:** To manage limited budgets, track spending, and save for future expenses.
 
 _In essence, anyone looking to gain better control over their financial situation can utilize this app to simplify and streamline the process of financial tracking._
@@ -61,13 +61,13 @@ _In essence, anyone looking to gain better control over their financial situatio
 ## Demo 
 - URL - https://expensemanage-dotnet48.azurewebsites.net/
 - You have to authenticate your identity by your email OTP.
-> _This OTP authentication is only demo purpose._ ✨
+> _This OTP authentication is for demo purposes._ ✨
 
 ## Getting Started
 Let's start with development & deployment at your own system & server. 
-> _It's required some software development knowledge._
+> _It required some software development knowledge._
 ### Prerequisites
-What things you need to install the software and how to install them.
+Below things you need to install.
 -  Windows 10 or 11 with [Visual Studio 2022](https://visualstudio.microsoft.com/vs/community) >= v.17.9.* `community edition`
 - [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-developer-pack-offline-installer) SDK `dev` `build`
 - Azure Portal Account (https://portal.azure.com/)
@@ -82,15 +82,15 @@ A step-by-step series of examples that tell you how to get a development environ
 
 1. Get the project
     - Clone the repository using `git clone https://github.com/JicoDotNet/Expense-Management-Bucket.git`.
-    - Or download the project from Github `https://github.com/JicoDotNet/Expense-Management-Bucket`
+    - Or download the project from GitHub `https://github.com/JicoDotNet/Expense-Management-Bucket`
 2. Open the solution in Visual Studio.
 3. Restore the NuGet packages.
 4. Update the connection string in `web.config`
-5. (Optional) If required, update muster data in `JsonMetaData.json`
+5. (Optional) If required, update master data in `JsonMetaData.json`
 6. Run the application.
 
 ### Deployment
-You can deploy this project any windows based server.
+You can deploy this project on any Windows based server.
 
 **Deployment requirements**
 ``` text
@@ -105,13 +105,13 @@ You can deploy this project any windows based server.
   - Connection String of Azure Table Storage
   - Login Credentials
 - Change Master Data from `JsonMetaData.json` with
-  - `TransactionTypes` for type of transaction
+  - `TransactionTypes` for the type of transaction
   - `ExpensesTypes` for categorization
-  - `StartingYear` which should be less then current year
+  - `StartingYear` should be less than the current year
 
 
 #### Azure Table Storage 
-Azure Table Storage is a cloud-based service that stores structured NoSQL data, providing a key/attribute store with a schemaless design. It’s part of the Microsoft Azure cloud platform and allows for the storage of large amounts of non-relational data.
+Azure Table Storage is a cloud-based service that stores structured NoSQL data, providing a key/attribute store with a schematic design. It’s part of the Microsoft Azure cloud platform and allows for the storage of large amounts of non-relational data.
 Azure Table Storage is ideal for storing datasets that do not require complex joins or foreign keys, such as user data for web applications, address books, and device information.
 
 _Generate the connection string of **Azure Table Storage** from [Azure Portal](https://portal.azure.com)._
@@ -122,7 +122,7 @@ _Generate the connection string of **Azure Table Storage** from [Azure Portal](h
  3. Click on the **Show keys** button at the top of the page to display the account keys and associated connection strings.
  4. Copy the **Connection string** provided there.
 
-**The Connection String is looks like:**
+**The Connection String looks like this:**
 ``` xml
 DefaultEndpointsProtocol=https;AccountName=[yourAccountName];AccountKey=[yourAccountKey]
 ```
@@ -157,7 +157,7 @@ This project is a collaborative effort that can involve various forms of partici
 - **Pull Request:** Submit a pull request to the original repository. Fill in the provided PR template with details of your changes.
 - **Code Review:** Be open to feedback and make requested changes during the code review process.
 
-Remember to always read the project’s CONTRIBUTING.md file, as it will contain specific guidelines tailored for the project’s needs. You are open to contribute. 
+Remember to always read the project’s CONTRIBUTING.md file, as it will contain specific guidelines tailored to the project’s needs. You are open to contributing. 
 Happy contributing! 🚀
 
 ## Versioning & Change log
@@ -176,7 +176,7 @@ N/A
 Initial implementation of this app
 ##### Features
 - Login Page
-- Tranction Record add page
+- Transaction Record add page
 - Report Page
 - Intuitive Graphs
 
@@ -193,4 +193,4 @@ Anyone can contact us regarding this project.
 
 ## Project Status
 The project is currently in the `alpha` stage; active development is in progress.
-> This project was built and develop in early 2021. In January 2024 it is migrated from Azure DevOps to Github.
+> This project was built and developed in early 2021. In January 2024 it is migrated from Azure DevOps to Github.
