@@ -2,6 +2,18 @@
 
 👋 Welcome, and thank you for considering contributing to `Expense Management` app. Your help is essential for keeping it great.
 
+## Table of Contents
+- [Getting Started](#getting-started)
+- [How to Contribute](#how-to-contribute)
+  - [Reporting Bugs](#reporting-bugs)  
+  - [Suggesting Enhancements](#suggesting-enhancements)
+  - [Your First Code Contribution](#your-first-code-contribution)  
+  - [Pull Requests](#pull-requests)
+- [Styleguides](#styleguides)
+  - [Git Commit Messages](#git-commit-messages)
+  - [Coding Standards](#coding-standards)
+- [Community](#community)
+
 ## Getting Started
 
 Before you begin:
