@@ -5,6 +5,7 @@
 ## Table of Contents
 - [Overview & Description](#overview--description)
   - [Features](#features)
+  - [Benefits](#benefits)
 - [Usage](#usage)
   - [Screenshots](#screenshots)  
 - [Demo](#demo)
@@ -39,6 +40,9 @@ Whether you’re looking to track daily expenditures, manage household budgets, 
 - **Data Export:** Generate and export detailed reports through intuitive graphs in various formats for personal record-keeping.
 - **Accessibility:** Access your financial data across multiple devices with cloud synchronization.
 - **Convenience:** Manage your finances on-the-go and keep your financial life organized in one place.
+
+### Benefits
+A key benefit of this web-based expense manager app is its ability to enhance financial awareness. By categorizing expenses and providing real-time insights through intuitive graphs, it helps users identify spending patterns and make informed decisions that support their financial goals.
 
 ## Usage
 An expense management app is a versatile tool designed to cater to a wide range of users who wish to track and manage their finances. Here’s a brief note on who can benefit from using such an app:
