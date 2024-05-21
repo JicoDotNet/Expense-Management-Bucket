@@ -4,7 +4,7 @@
 
 ## Table of Contents
 - [Overview & Description](#overview--description)
-- [Features](#features)
+  - [Features](#features)
 - [Usage](#usage)
   - [Screenshots](#screenshots)  
 - [Demo](#demo)
@@ -30,7 +30,7 @@ By delivering real-time insights into your spending behaviour, our app empowers 
 
 _• It helps you make informed decisions to achieve your personal finance expenses and goals._
 
-## Features
+### Features
 Whether you’re looking to track daily expenditures, manage household budgets, or simply gain better control over your finances, an expense manager app is an essential tool for modern financial well-being.
 
 - **Transaction Tracking:** Log every expense with a few clicks. Add details like amount, category, date, and notes.
@@ -66,6 +66,7 @@ _In essence, anyone looking to gain better control over their financial situatio
 ## Getting Started
 Let's start with development & deployment at your own system & server. 
 > _It required some software development knowledge._
+
 ### Prerequisites
 Below things you need to install.
 -  Windows 10 or 11 with [Visual Studio 2022](https://visualstudio.microsoft.com/vs/community) >= v.17.9.* `community edition`
