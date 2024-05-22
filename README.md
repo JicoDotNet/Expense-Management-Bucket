@@ -9,12 +9,12 @@
 - [Usage](#usage)
   - [Screenshots](#screenshots)  
 - [Demo](#demo)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Tech Stack](#tech-stack)
+- [Getting Started](https://github.com/JicoDotNet/Expense-Management-Bucket/blob/master/source/README.md#getting-started)
+  - [Prerequisites](https://github.com/JicoDotNet/Expense-Management-Bucket/blob/master/source/README.md#prerequisites)
+  - [Tech Stack](https://github.com/JicoDotNet/Expense-Management-Bucket/blob/master/source/README.md#tech-stack)
   - [Installation](#installation)
-  - [Deployment](#deployment)
-    - [Azure Table Storage](#azure-table-storage)
+  - [Deployment](https://github.com/JicoDotNet/Expense-Management-Bucket/blob/master/source/README.md#deployment)
+    - [Azure Table Storage](https://github.com/JicoDotNet/Expense-Management-Bucket/blob/master/source/README.md#azure-table-storage)
 - [Authors and Acknowledgment](#authors-and-acknowledgment)
   - [Contributors](#contributors)
 - [Contributing](#contributing)
@@ -68,7 +68,7 @@ _In essence, anyone looking to gain better control over their financial situatio
 > _This OTP authentication is for demo purposes._ ✨
 
 ## Getting Started
-How to setup and build You have to read [source/README.md](#)
+How to setup and build You have to read [source/README.md](https://github.com/JicoDotNet/Expense-Management-Bucket/blob/master/source/README.md)
 
 ## Authors and Acknowledgment
 - **Soubhik Nandy** - _Initial work_ - [@JicoDotNet](https://github.com/JicoDotNet) - Code Owner
