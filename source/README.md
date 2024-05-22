@@ -65,3 +65,8 @@ _Generate the connection string of **Azure Table Storage** from [Azure Portal](h
 ``` xml
 DefaultEndpointsProtocol=https;AccountName=[yourAccountName];AccountKey=[yourAccountKey]
 ```
+
+## Demo 
+- URL - https://expensemanage-dotnet48.azurewebsites.net/
+- You have to authenticate your identity by your email OTP.
+> _This OTP authentication is for demo purposes._ ✨
