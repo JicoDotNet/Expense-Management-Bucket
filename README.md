@@ -68,7 +68,7 @@ _In essence, anyone looking to gain better control over their financial situatio
 > _This OTP authentication is for demo purposes._ ✨
 
 ## Getting Started
-How to setup and build You have to read [source/README.md](https://github.com/JicoDotNet/Expense-Management-Bucket/blob/master/source/README.md)
+How to setup, build and deploy this application, you have to read [source/README.md](https://github.com/JicoDotNet/Expense-Management-Bucket/blob/master/source/README.md)
 
 ## Authors and Acknowledgment
 - **Soubhik Nandy** - _Initial work_ - [@JicoDotNet](https://github.com/JicoDotNet) - Code Owner
